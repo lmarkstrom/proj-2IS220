@@ -1,0 +1,30 @@
+header {
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    width: 100%;
+
+    font-family: 'Lato', sans-serif;
+}
+header > nav {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: 0 10%;
+    align-self: center;
+}
+header h2 {
+    font-size: 2em;
+    font-weight: 500;
+    margin-left: 30px;
+}
+header a {
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+header a:hover {
+    color: #ddd;
+}

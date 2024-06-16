@@ -1,0 +1,17 @@
+footer {
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 30px;
+    bottom: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+
+    font-family: 'Lato', sans-serif;
+}
+footer p {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0 30px;
+}
