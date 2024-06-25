@@ -4,10 +4,11 @@ footer {
     text-align: center;
     justify-content: space-between;
     padding: 30px;
+    margin: 0;
     bottom: 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
-
+    position: fixed;
     font-family: 'Lato', sans-serif;
 }
 footer p {

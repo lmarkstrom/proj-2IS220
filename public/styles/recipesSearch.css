@@ -6,31 +6,27 @@
 #recipe-table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 10px;
+    border-spacing: 0px 10px;
+    padding: 0 10px;
 }
-#recipe-table th, #recipe-table td {
+#recipe-table td {
     padding: 16px;  
     text-align: center;  
     vertical-align: middle;  
-    font-size: 18px;
-}
-#recipe-table th {
-    background-color: #f2f2f2;
-    color: black;
-    font-weight: bold;
-    
+    font-size: 1.3em;
 }
 tr{
-    background-color: #f2f2f273;
+    background-color: #f2f2f2a6;
 }
 #recipe-table tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 /* Style for images */
 #recipe-table img {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
 }
 /* Button styling (if needed) */

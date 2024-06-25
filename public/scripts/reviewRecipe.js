@@ -21,8 +21,9 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
 function submitReview() {
     const recipe = sessionStorage.getItem("recipe-id");
     const name = document.getElementById('name').value;
-    const rating = document.getElementById('rating').value;
-    const comment = document.getElementById('comment').value;
+    const score = document.getElementById('rating').value;
+    const text = document.getElementById('comment').value;
+    console.log('Review submitted:', recipe, name, score, text);
 
     // Send data to backend server
     fetch('http://localhost:3000/submit-review', {
@@ -30,7 +31,7 @@ function submitReview() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ recipe, name, rating, comment }),
+        body: JSON.stringify({ recipe, name, score, text }),
     })
     .then(response => response.text())
     .then(data => {

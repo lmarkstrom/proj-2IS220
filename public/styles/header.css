@@ -1,10 +1,13 @@
 header {
     background-color: #ffffff;
     display: flex;
+    position: sticky;
     text-align: center;
     justify-content: space-between;
     padding: 20px 20px;
     width: 100%;
+    top: 0;
+    z-index: 1000;
 
     font-family: 'Lato', sans-serif;
 }
@@ -21,10 +24,11 @@ header h2 {
     margin-left: 30px;
 }
 header a {
-    font-weight: 400;
+    font-weight: 450;
     text-decoration: none;
-    
+    color: rgb(36, 35, 41);
+    transition: transform 0.2s ease;
 }
 header a:hover {
-    color: #ddd;
+    transform: scale(1.2);
 }

@@ -5,8 +5,10 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
+// set static public path
 app.use(express.static(path.join(__dirname, 'public')));
 
+// set start page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -20,14 +22,22 @@ const db = new sqlite3.Database('./database/reviews.db', (err) => {
     }
 });
 
-// Middleware to parse JSON request body
 app.use(express.json());
 
-// Endpoint to handle POST request from frontend
+// Start serverside code
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
+
+
+// Database code
+
+
+// Store data in SQLite database
 app.post('/submit-review', (req, res) => {
     const { recipe, name, score, text } = req.body;
 
-    // Insert data into SQLite database
+    // Insert data 
     const sql = `INSERT INTO reviews (recipe, name, score, text) VALUES (?, ?, ?, ?)`;
     db.run(sql, [recipe, name, score, text], function(err) {
         if (err) {
@@ -38,7 +48,19 @@ app.post('/submit-review', (req, res) => {
     });
 });
 
-// Start server
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+// get reviews for specific recipe in SQLite database
+app.post('/get-reviews', (req, res) => {
+    console.log('Fetching reviews for recipe:', req.body.recipe);
+    const { recipe } = req.body;
+
+    // Fetch all reviews for the specified recipe
+    const selectSql = `SELECT name, score, text FROM reviews WHERE recipe = ?`;
+    db.all(selectSql, [recipe], (err, rows) => {
+        if (err) {
+            console.error('Error fetching reviews:', err.message);
+            return res.status(500).send('Error fetching reviews.');
+        }
+        // snd list of reviews as response
+        res.status(200).json(rows); // rows is an array of one review 
+    });
 });

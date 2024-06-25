@@ -1,0 +1,21 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+#maincontainer h2 {
+    margin: 40px;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+#maincontainer h3 {
+    margin: 40px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+#maincontainer p {
+    margin: 20px 150px;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+#maincontainer {
+    background-color: #f0f0f0cb;
+}
