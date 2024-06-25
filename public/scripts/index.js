@@ -5,7 +5,7 @@ function searchRecipes(){
     if(search === "") return;
     sessionStorage.setItem("search", search);
     console.log(search);
-    window.location.href = 'recipes.html';
+    window.location.href = 'recipesSearch.html';
 }
 
 searchBtn.addEventListener('click', searchRecipes);

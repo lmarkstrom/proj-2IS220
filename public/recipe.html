@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/recipe.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="scripts/reviewRecipe.js"></script>
+    <title>Recipe Reviewer</title>
+</head>
+<body>
+    <header>
+        <h2>Recipe Reviewer</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html">Reviews</a>
+        </nav>
+    </header>
+
+    <div id="maincontainer">
+        <div id="recipecontainer">
+            
+        </div>
+        <div id="review">
+            
+            <form id="reviewForm">
+                <h2>Review this recipe</h2>
+                <label for="name">Your Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+        
+                <label for="rating">Rating:</label><br>
+                <input type="range" id="rating" name="rating" min="1" max="5" value="3" step="1" oninput="updateRating(this.value)">
+                <span id="ratingValue">3</span><br><br> 
+        
+                <label for="comment">Comment</label><br>
+                <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Share your thoughts..."></textarea><br><br>
+        
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Recipe Reviewer</p>
+        <p>Linus Markström</p>
+    </footer>
+
+    <script type="module" src="scripts/recipe.js"></script>
+    <script>
+        function updateRating(value) {
+            document.getElementById("ratingValue").innerText = value;
+        }
+    </script>
+</body>
+</html>

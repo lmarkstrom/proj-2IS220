@@ -1,4 +1,4 @@
-import { getRecipes } from './getRecipes.js';
+import { getRecipes } from './getRecipesSearch.js';
 
 const search = sessionStorage.getItem("search");
 console.log("Searched: " + search);
@@ -23,15 +23,17 @@ function addRecipesToPage(data) {
         const recipe = recipeData.recipe;
         const row = document.createElement('tr');
 
+        // Add event listener to the row
+        row.addEventListener('click', () => {
+            const recipeUri = recipe.uri;
+            const recipeId = recipeUri.split('#recipe_')[1];
+            handleRecipeClick(recipeId);  
+        });
+
         // Recipe Name
         const nameCell = document.createElement('td');
         nameCell.textContent = recipe.label;
         row.appendChild(nameCell);
-
-        // Number of Ingredients
-        const ingredientsCell = document.createElement('td');
-        ingredientsCell.textContent = recipe.ingredientLines.length;
-        row.appendChild(ingredientsCell);
 
         // Picture
         const pictureCell = document.createElement('td');
@@ -44,4 +46,10 @@ function addRecipesToPage(data) {
         // Append row to table body
         tableBody.appendChild(row);
     });
+}
+
+function handleRecipeClick(id) {
+    console.log(id);
+    sessionStorage.setItem("recipe-id", id);
+    window.location = "recipe.html";  // Navigate to the recipe URL
 }

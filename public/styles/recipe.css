@@ -1,0 +1,130 @@
+#recipecontainer{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px 80px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+#recipecontainer h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+#recipecontainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+#recipecontainer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+#recipecontainer ul li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+#recipecontainer a {
+    display: block; 
+    text-align: center;
+    padding: 10px 0; 
+    margin: 30px 0; 
+    background-color: #3c7bb6; 
+    color: white; 
+    text-decoration: none; 
+
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+#recipecontainer a:hover {
+    background-color: #305f8a; 
+}
+
+
+/* Form */
+
+#reviewForm {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+#reviewForm h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+#reviewForm label {
+    display: block;
+    text-align: center;
+}
+#reviewForm input {
+    display: block;
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}
+#reviewForm span {
+    display: block;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 10px;
+}
+#reviewForm textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    resize: none;
+}
+#reviewForm textarea, #reviewForm input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#reviewForm button {
+    background-color: #3c7bb6; 
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#reviewForm button:hover {
+    background-color: #305f8a; 
+}
+
+#reviewForm input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+#ratingValue {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    min-width: 30px;
+    text-align: center;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
