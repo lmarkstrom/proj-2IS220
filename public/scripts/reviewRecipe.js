@@ -1,6 +1,5 @@
-// Form submission handling
 document.getElementById('reviewForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
     // Get form data
     const formData = new FormData(this);
@@ -9,11 +8,8 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
         reviewData[key] = value;
     });
 
-    // Example of what to do with the data (you can replace this with your own logic)
     console.log('Review submitted:', reviewData);
     submitReview();
-
-    // Optionally, clear the form after submission
     this.reset();
 });
 
@@ -25,7 +21,7 @@ function submitReview() {
     const text = document.getElementById('comment').value;
     console.log('Review submitted:', recipe, name, score, text);
 
-    // Send data to backend server
+    // Send data to backend 
     fetch('http://localhost:3000/submit-review', {
         method: 'POST',
         headers: {
@@ -38,7 +34,7 @@ function submitReview() {
         console.log('Review submit:', recipe);
         console.log('Review submitted:', data);
         alert('Review submitted successfully!');
-        document.getElementById('reviewForm').reset(); // Optionally reset form
+        document.getElementById('reviewForm').reset(); 
     })
     .catch(error => {
         console.error('Error submitting review:', error);

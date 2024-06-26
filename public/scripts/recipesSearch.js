@@ -23,19 +23,17 @@ function addRecipesToPage(data) {
         const recipe = recipeData.recipe;
         const row = document.createElement('tr');
 
-        // Add event listener to the row
+        // Add event listene
         row.addEventListener('click', () => {
             const recipeUri = recipe.uri;
             const recipeId = recipeUri.split('#recipe_')[1];
             handleRecipeClick(recipeId);  
         });
 
-        // Recipe Name
         const nameCell = document.createElement('td');
         nameCell.textContent = recipe.label;
         row.appendChild(nameCell);
 
-        // Picture
         const pictureCell = document.createElement('td');
         const img = document.createElement('img');
         img.src = recipe.image;
@@ -43,7 +41,6 @@ function addRecipesToPage(data) {
         pictureCell.appendChild(img);
         row.appendChild(pictureCell);
 
-        // Append row to table body
         tableBody.appendChild(row);
     });
 }
@@ -51,5 +48,5 @@ function addRecipesToPage(data) {
 function handleRecipeClick(id) {
     console.log(id);
     sessionStorage.setItem("recipe-id", id);
-    window.location = "recipe.html";  // Navigate to the recipe URL
+    window.location = "recipe.html";  
 }

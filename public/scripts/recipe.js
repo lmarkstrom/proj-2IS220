@@ -3,7 +3,7 @@ import { getRecipeDetails } from './getRecipeId.js';
 
 const recipe = sessionStorage.getItem("recipe-id");
 
-// Fetch data from backend server
+// Fetch data 
 fetch('http://localhost:3000/get-reviews', {
     method: 'POST',
     headers: {

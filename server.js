@@ -38,7 +38,10 @@ app.post('/submit-review', (req, res) => {
     const { recipe, name, score, text } = req.body;
 
     // Insert data 
-    const sql = `INSERT INTO reviews (recipe, name, score, text) VALUES (?, ?, ?, ?)`;
+    const sql = `
+        INSERT INTO reviews (recipe, name, score, text) 
+        VALUES (?, ?, ?, ?)
+    `;
     db.run(sql, [recipe, name, score, text], function(err) {
         if (err) {
             return console.error('Error inserting data:', err.message);
@@ -54,7 +57,11 @@ app.post('/get-reviews', (req, res) => {
     const { recipe } = req.body;
 
     // Fetch all reviews for the specified recipe
-    const selectSql = `SELECT name, score, text FROM reviews WHERE recipe = ?`;
+    const selectSql = `
+        SELECT name, score, text 
+        FROM reviews 
+        WHERE recipe = ?
+    `;
     db.all(selectSql, [recipe], (err, rows) => {
         if (err) {
             console.error('Error fetching reviews:', err.message);
@@ -62,5 +69,23 @@ app.post('/get-reviews', (req, res) => {
         }
         // snd list of reviews as response
         res.status(200).json(rows); // rows is an array of one review 
+    });
+});
+
+app.get('/top-recipes', (req, res) => {
+    const selectSql = `
+        SELECT recipe, AVG(score) as average_score
+        FROM reviews
+        GROUP BY recipe
+        ORDER BY average_score DESC
+        LIMIT 10
+    `;
+    db.all(selectSql, [], (err, rows) => {
+        if (err) {
+            console.error('Error fetching top recipes:', err.message);
+            return res.status(500).send('Error fetching top recipes.');
+        }
+        // Send the list of top recipes as response
+        res.status(200).json(rows);
     });
 });

@@ -7,7 +7,7 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0px 10px;
-    padding: 0 10px;
+    padding: 20px 40px;
 }
 #recipe-table td {
     padding: 16px;  
@@ -17,10 +17,12 @@
 }
 tr{
     background-color: #f2f2f2a6;
+    transition: transform 0.2s ease;
 }
 #recipe-table tr:hover {
     background-color: #f1f1f1;
     cursor: pointer;
+    transform: scale(1.05);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 /* Style for images */
@@ -29,15 +31,15 @@ tr{
     height: 250px;
     object-fit: cover;
 }
-/* Button styling (if needed) */
+
 .view-recipe-btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;  /* Increased padding for larger button */
+    padding: 10px 20px; 
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;  /* Increase font size */
+    font-size: 16px; 
 }
 .view-recipe-btn:hover {
     background-color: #45a049;
