@@ -4,7 +4,7 @@ import { getRecipeDetails } from './getRecipeId.js';
 const recipe = sessionStorage.getItem("recipe-id");
 
 // Fetch data 
-fetch('http://localhost:3000/get-reviews', {
+fetch('https://proj-2is220.onrender.com/get-reviews', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
