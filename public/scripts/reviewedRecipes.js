@@ -1,6 +1,6 @@
 import { getRecipeDetails } from './getRecipeId.js';
 
-fetch('https://proj-2is220.onrender.com/top-recipes', {
+fetch('http://localhost:3000/top-recipes', {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json',
