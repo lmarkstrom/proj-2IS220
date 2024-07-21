@@ -22,7 +22,7 @@ function submitReview() {
     console.log('Review submitted:', recipe, name, score, text);
 
     // Send data to backend 
-    fetch('http://localhost:3000/submit-review', {
+    fetch('https://proj-2is220.onrender.com/submit-review', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
