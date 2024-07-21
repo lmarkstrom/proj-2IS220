@@ -11,7 +11,7 @@ export async function getRecipeDetails(recipeId) {
         }
         const data = await response.json();
         return data.recipe;
-    } catch (error) {
+    } catch (error) { 
         console.error('Error fetching recipe details:', error);
     }
 }

@@ -15,7 +15,7 @@ function getData(search) {
         });
 }
 
-function addRecipesToPage(data) {
+function addRecipesToPage(data) { 
     const recipes = data.hits;
     const tableBody = document.getElementById('recipe-table-body');
 

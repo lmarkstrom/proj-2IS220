@@ -11,7 +11,7 @@ fetch('https://proj-2is220.onrender.com/get-reviews', {
     },
     body: JSON.stringify({ recipe }),
 })
-.then(response => {
+.then(response => { 
     if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
     }

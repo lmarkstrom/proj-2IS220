@@ -17,7 +17,7 @@ fetch('https://proj-2is220.onrender.com/top-recipes', {
     console.log('Reviews:', data);
     fetchRecipeDetails(data);
 })
-.catch(error => {
+.catch(error => { 
     console.error('Error fetching reviews:', error);
     alert('Failed to load reviews. Please try again.');
 });

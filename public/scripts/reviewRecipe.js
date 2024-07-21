@@ -14,7 +14,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
 });
 
 
-function submitReview() {
+function submitReview() { 
     const recipe = sessionStorage.getItem("recipe-id");
     const name = document.getElementById('name').value;
     const score = document.getElementById('rating').value;

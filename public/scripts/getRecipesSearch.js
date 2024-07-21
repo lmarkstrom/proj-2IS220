@@ -15,7 +15,7 @@ export function getRecipes(search) {
         .then(data => {
             return data; 
         })
-        .catch(error => {
+        .catch(error => { 
             console.error('There was a problem with the fetch operation:', error);
             throw error; 
         });
