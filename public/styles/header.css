@@ -20,8 +20,13 @@ header > nav {
 }
 header h2 {
     font-size: 2em;
-    font-weight: 500;
+    font-weight: 800;
     margin-left: 30px;
+    padding: 10px 10px;
+    border-left: 5px solid #333;
+    border-right: 5px solid #333; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    letter-spacing: 1px;
 }
 header a {
     font-weight: 450;

@@ -5,7 +5,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f3aeae;
     min-height: 100vh;
     font-family: 'Lato', sans-serif;
     background-image: url('img/background.jpg');
@@ -87,13 +86,18 @@ body {
 }
 #reviews {
     margin: 20px;
+    
+}
+#reviews img:hover{
+    transform: scale(1.02);
+    
 }
 #reviews img {
     display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
-
+    transition: transform 0.2s ease;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
