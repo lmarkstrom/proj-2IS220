@@ -1,7 +1,6 @@
 import { getRecipeDetails } from './getRecipteData.js';
 
 const id = sessionStorage.getItem("recipe-id");
-console.log("Recipe ID: " + id);
 
 function displayRecipeDetails(recipe) {
     const recipecontainer = document.getElementById('recipecontainer');
@@ -31,9 +30,8 @@ function displayRecipeDetails(recipe) {
 }
 
 document.getElementById('reviewForm').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    // Get form data
     const formData = new FormData(this);
     const reviewData = {};
     formData.forEach((value, key) => {

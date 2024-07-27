@@ -1,7 +1,6 @@
 import { getRecipes } from './getRecipteData.js';
 
 const search = sessionStorage.getItem("search");
-console.log("Searched: " + search);
 
 getData(search);
 
@@ -23,7 +22,6 @@ function addRecipesToPage(data) {
         const recipe = recipeData.recipe;
         const row = document.createElement('tr');
 
-        // Add event listene
         row.addEventListener('click', () => {
             const recipeUri = recipe.uri;
             const recipeId = recipeUri.split('#recipe_')[1];
@@ -46,7 +44,6 @@ function addRecipesToPage(data) {
 }
 
 function handleRecipeClick(id) {
-    console.log(id);
     sessionStorage.setItem("recipe-id", id);
     window.location = "recipe.html";  
 }
