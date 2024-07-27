@@ -1,20 +1,16 @@
-@media (min-width: 1000px) and (max-width: 4000px) {
-    
-}
-
 /* General component */
 body {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     font-family: 'Lato', sans-serif;
     background-image: url('img/background.jpg');
-    background-attachment: fixed;
+    background-attachment: fixed; 
     background-size: cover;
     backdrop-filter: blur(4px);
     background-repeat: no-repeat;
-    left: 0;
     overflow-x: hidden;
 }
 
@@ -24,14 +20,14 @@ body {
     align-items: center;
     background-color: #f0f0f0b2;
     width: 80%;
-    height: auto;
+    height: 100vh;
     max-width: 1000px;
     padding: 20px;
-    margin-bottom: 100px;
 
     box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2), 10px 0 10px -5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    flex: 1;
 }
-
 
 /* Home page */
 #searchcontainer {
@@ -164,6 +160,13 @@ body {
     font-size: 1.1em;
     font-weight: 400;
 }
+.about img  {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
 
 /* Search result page */
 #recipe-table {
@@ -210,20 +213,23 @@ tr{
 #share{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    align-items: center; 
 }   
 #share a{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    margin-top: 8%;
+    height: auto;
     text-decoration: none;
 }
+#share h2{
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+    margin-bottom: 20px;
+}
 #share img{
-    width: 10dvh;
+    width: 5vh;
     height: auto;
-    padding-top: 20px;
-    padding-bottom: 20dvh;
 }
 
 /* Footer */
@@ -232,13 +238,11 @@ footer {
     display: flex;
     text-align: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 0px;
     margin: 0;
     bottom: 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
-    position: fixed;
-    font-family: 'Lato', sans-serif;
 }
 footer p {
     font-size: 1em;
@@ -253,18 +257,17 @@ header {
     position: sticky;
     text-align: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    padding: 20px 0px;
+    margin: 0;
     width: 100%;
-    top: 0;
     z-index: 1000;
-    left: 0;
-    font-family: 'Lato', sans-serif;
 }
 header > nav {
     display: flex;
     justify-content: space-between;
     width: 20%;
-    margin: 0 10%;
+    max-width: 200px;
+    margin: 0 5%;
     align-self: center;
 }
 header h2 {
@@ -285,4 +288,186 @@ header a {
 }
 header a:hover {
     transform: scale(1.2);
+}
+
+
+/* Desktop */
+/* Normal css settings */
+
+/* Media queries */
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    /* Header */
+    header a {
+        margin: 10px;
+    }
+    header h2 {
+        font-size: 1.5em;
+        padding: 10px 0px;
+        max-width: 150px;
+        margin-left: 25px;
+    }
+    /* General component */
+    #maincontainer {
+        width: 85%;
+        padding: 20px 0px;
+    }
+
+    /* Home page */
+    #contentcontainer {
+        width: 80%;
+        height: 30%;
+        margin: 4% 0;
+    }
+    #subcontent {
+        margin-top: 5%;
+        flex-direction: column;
+    }
+    #subcontent div {
+        margin: 10px;
+        width: 90%;
+    }
+    #subcontent h3 {
+        font-size: 2.5em;
+    }
+    #subcontent p {
+        font-size: 1.5em;
+    }
+
+    /* About page */
+    .about h2 {
+        margin: 20px;
+        padding-top: 20px;
+        font-size: 1.9em;
+    }
+    .about h3 {
+        margin: 10px;
+        font-size: 1.7em;
+    }
+    .about p {
+        margin: 30px 60px;
+        margin-bottom: 40px;
+        font-size: 1.3em;
+    }
+    .about img  {
+        width: 70%;
+    }
+
+    /* Search result page */
+    #recipe-table {
+        width: 95%;
+        padding: 10px 20px;
+    }
+    #recipe-table td {
+        padding: 15px;
+    }
+    #recipe-table img {
+        width: 175px;
+        height: 175px;
+    }
+
+    /* Share page */
+    #share img{
+        width: 7dvh;
+    }  
+}
+/* Mobile */
+@media (max-width: 480px) {
+    /* Header */
+    header > nav {
+        flex-direction: column;
+        margin: 0 5%;
+    }
+    header a {
+        margin: 5px;
+    }
+    header h2 {
+        font-size: 1em;
+        padding: 10px 0px;
+        max-width: 150px;
+        margin-left: 20px;
+    }
+    /* Footer */
+    footer {
+        padding: 18px 0px;
+    }
+    /* General component */
+    #maincontainer {
+        width: 100%;
+        padding: 20px 0px;
+    }
+
+    /* Home page */
+    #searchcontainer {
+        padding: 5px;
+    }
+    #searchbar {
+        width: 60%;
+        margin: 0 5px 0 0;
+        padding: 5px;
+        font-size: 10px;
+    }
+    #searchbutton {
+        width: 20%;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 10px;
+    }
+    #contentcontainer {
+        width: 80%;
+        height: 30%;
+        margin: 4% 0;
+    }
+    #reviews {
+        margin: 8px;
+    }
+    #subcontent {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #subcontent div {
+        margin: 5px;
+        width: 90%;
+    }
+
+    /* About page */
+    .about h2 {
+        margin: 20px;
+        padding-top: 20px;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    .about h3 {
+        margin: 10px;
+        font-size: 1.3em
+    }
+    .about p {
+        margin: 20px 20px;
+        margin-bottom: 40px;
+        font-size: 1em;
+    }
+    .about img  {
+        width: 70%;
+    }
+
+    /* Search result page */
+    #recipe-table {
+        width: 95%;
+        padding: 10px 20px;
+    }
+    #recipe-table td {
+        padding: 8px;
+    }
+    #recipe-table img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Share page */
+    #share img{
+        width: 9dvh;
+    }  
 }

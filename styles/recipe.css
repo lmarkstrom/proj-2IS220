@@ -1,3 +1,4 @@
+/* Recipe page */
 .container {
     max-width: 700px;
     width: 60%;
@@ -9,9 +10,7 @@
     background-color: #f9f9f9;
     font-family: 'Lato', sans-serif;
 }
-
 #recipecontainer{
-    /* width: 100%; */
     margin: 0 auto;
 }
 #recipecontainer h2 {
@@ -57,11 +56,8 @@
     background-color: #305f8a; 
 }
 
-
 /* Form */
-
 #review {
-    /* width: 100%;  */
     margin: 20px auto;
 }
 #reviewForm {
@@ -80,8 +76,6 @@
 }
 #reviewForm input {
     width: 100%;
-    /* align-self: center;
-    justify-self: center; */
 }
 #reviewForm span {
     display: block;
@@ -100,7 +94,6 @@
     border: 1px solid #ddd;
     border-radius: 8px;
 }
-
 #reviewForm button {
     background-color: #3c7bb6; 
     width: 100%;
@@ -111,16 +104,13 @@
     cursor: pointer;
     border-radius: 4px;
 }
-
 #reviewForm button:hover {
     background-color: #305f8a; 
 }
-
 #reviewForm input[type="range"] {
     width: 100%;
     margin-top: 5px;
 }
-
 #ratingValue {
     display: inline-block;
     font-size: 1.2rem;
@@ -135,9 +125,7 @@
 /* Reviews  */
 #reviewsContainer {
     width: 100%;
-    
 }
-
 #maincontainer > h2 {
     text-align: center;
     color: #333;
@@ -164,4 +152,21 @@
     font-weight: 500;
     font-size: 1.2rem;
     margin-top: 10px;
+}
+
+/* Media queries */
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        width: 75%;
+    }
+    #recipecontainer h2 {
+        font-size: 2rem;
+    }
 }
