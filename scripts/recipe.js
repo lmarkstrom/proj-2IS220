@@ -1,62 +1,7 @@
-import { getRecipeDetails } from './getRecipeId.js';
+import { getRecipeDetails } from './getRecipteData.js';
 
-
-const recipe = sessionStorage.getItem("recipe-id");
-
-// Fetch data 
-fetch('https://proj-2is220.onrender.com/get-reviews', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ recipe }),
-})
-.then(response => { 
-    if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json(); 
-})
-.then(data => {
-    console.log('Fetched reviews for recipe:', recipe);
-    console.log('Reviews:', data);
-    displayReviews(data);
-})
-.catch(error => {
-    console.error('Error fetching reviews:', error);
-    alert('Failed to load reviews. Please try again.');
-});
-
-
-
-function displayReviews(reviews) {
-    const reviewsContainer = document.getElementById('reviewsContainer'); 
-    reviewsContainer.innerHTML = ''; 
-
-    // Limit to 5 
-    const reviewsToShow = reviews.slice(0, 5);
-
-    reviewsToShow.forEach(review => {
-        const reviewElement = document.createElement('div');
-        reviewElement.classList.add('container');
-
-        if (review.text === null || review.text === undefined) {
-            reviewElement.innerHTML = `
-                <h3>${review.name}</h3>
-                <h4>${review.score}/5</h4>
-            `;
-        } else {
-            reviewElement.innerHTML = `
-                <h3>${review.name}</h3>
-                <p>${review.text}</p>
-                <h4>${review.score}/5</h4>
-            `;
-        }
-
-        reviewsContainer.appendChild(reviewElement);
-    });
-}
-
+const id = sessionStorage.getItem("recipe-id");
+console.log("Recipe ID: " + id);
 
 function displayRecipeDetails(recipe) {
     const recipecontainer = document.getElementById('recipecontainer');
@@ -81,11 +26,25 @@ function displayRecipeDetails(recipe) {
     const instructions = document.createElement('a');
     instructions.textContent = 'Instructions';
     instructions.href = recipe.url;
+    sessionStorage.setItem("url", recipe.url);
     recipecontainer.appendChild(instructions);
 }
 
-const id = sessionStorage.getItem("recipe-id");
-console.log("Recipe ID: " + id);
+document.getElementById('reviewForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    // Get form data
+    const formData = new FormData(this);
+    const reviewData = {};
+    formData.forEach((value, key) => {
+        reviewData[key] = value;
+    });
+
+    console.log('Review submitted:', reviewData);
+
+    this.reset();
+    window.location = "reviewed.html";
+});
 
 if (id) {
     getRecipeDetails(id).then(recipe => {

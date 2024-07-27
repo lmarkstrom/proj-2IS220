@@ -1,6 +1,8 @@
 @media (min-width: 1000px) and (max-width: 4000px) {
     
 }
+
+/* General component */
 body {
     display: flex;
     flex-direction: column;
@@ -29,6 +31,9 @@ body {
 
     box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2), 10px 0 10px -5px rgba(0, 0, 0, 0.2);
 }
+
+
+/* Home page */
 #searchcontainer {
     display: flex;
     align-items: center;
@@ -140,6 +145,87 @@ body {
     margin: 0 5% 5% 5% ;
 }
 
+
+/* About page */
+.about h2 {
+    margin: 40px;
+    padding-top: 60px;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+.about h3 {
+    margin: 40px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.about p {
+    margin: 20px 150px;
+    margin-bottom: 80px;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* Search result page */
+#recipe-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px 10px;
+    padding: 20px 40px;
+}
+#recipe-table td {
+    padding: 16px;  
+    text-align: center;  
+    vertical-align: middle;  
+    font-size: 1.3em;
+}
+tr{
+    background-color: #f2f2f2a6;
+    transition: transform 0.2s ease;
+}
+#recipe-table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#recipe-table img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+.view-recipe-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; 
+}
+.view-recipe-btn:hover {
+    background-color: #45a049;
+}
+
+/* Reviewed page */
+#share{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}   
+#share a{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+}
+#share img{
+    width: 10dvh;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20dvh;
+}
+
 /* Footer */
 footer {
     background-color: #ffffff;
@@ -177,7 +263,7 @@ header {
 header > nav {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 20%;
     margin: 0 10%;
     align-self: center;
 }
@@ -189,7 +275,7 @@ header h2 {
     border-left: 5px solid #333;
     border-right: 5px solid #333; 
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
-    letter-spacing: 1px;
+    letter-spacing: 1.4px;
 }
 header a {
     font-weight: 450;

@@ -1,4 +1,4 @@
-import { getRecipes } from './getRecipesSearch.js';
+import { getRecipes } from './getRecipteData.js';
 
 const search = sessionStorage.getItem("search");
 console.log("Searched: " + search);

@@ -20,3 +20,18 @@ export function getRecipes(search) {
             throw error; 
         });
 }
+
+export async function getRecipeDetails(recipeId) {
+    const apiUrl = `https://api.edamam.com/api/recipes/v2/${recipeId}?type=public&app_id=${app_id}&app_key=${app_key}`;
+
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        return data.recipe;
+    } catch (error) { 
+        console.error('Error fetching recipe details:', error);
+    }
+}
