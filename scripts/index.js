@@ -1,5 +1,6 @@
 const searchBtn = document.getElementById('searchbutton'); // hämtar sökknappen i de fall vi är på index sidan
 const linkIcon = document.getElementById('copyLink'); // hämtar länk ikonen i de fall vi är på reviewed sidan
+const reviewForm = document.getElementById('reviewForm'); // hämtar formuläret för recensioner
 
 // Funktion som startar en sökning av ett recept
 function searchRecipes(){
@@ -27,3 +28,22 @@ if(linkIcon) {
         });
     });
 }
+// kollar om reviewForm finns
+if(reviewForm) {
+    // Skapar en eventlistener för formuläret att göra en recension
+    reviewForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const reviewData = {};
+    formData.forEach((value, key) => {  // lägger till allt i formuläret i en lista
+        reviewData[key] = value;
+    });
+
+    console.log('Review submitted:', reviewData); // presentera datan från recensionen
+
+    this.reset(); // töm formuläret
+    window.location = "reviewed.html";
+    });
+}
+

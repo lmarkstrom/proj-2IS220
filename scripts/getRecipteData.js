@@ -4,9 +4,9 @@ const app_key = '98bc9840d51741e2878170b56863111a'; // api nyckel
 // Funktion som hämtar recept från API:n genom att använda en söksträng
 export function getRecipes(search) {
     var query = search;
-    var endpoint = `https://api.edamam.com/search?q=${query}&app_id=${app_id}&app_key=${app_key}`;
+    var query = `https://api.edamam.com/search?q=${query}&app_id=${app_id}&app_key=${app_key}`;
 
-    return fetch(endpoint)
+    return fetch(query)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -24,10 +24,10 @@ export function getRecipes(search) {
 
 // Function som hämtar detaljer för ett specifikt recept från API:n
 export async function getRecipeDetails(recipeId) {
-    const apiUrl = `https://api.edamam.com/api/recipes/v2/${recipeId}?type=public&app_id=${app_id}&app_key=${app_key}`;
+    const query = `https://api.edamam.com/api/recipes/v2/${recipeId}?type=public&app_id=${app_id}&app_key=${app_key}`;
 
     try {
-        const response = await fetch(apiUrl);
+        const response = await fetch(query);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
