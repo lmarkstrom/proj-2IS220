@@ -44,7 +44,7 @@
     text-align: center;
     padding: 10px 0; 
     margin: 30px 0; 
-    background-color: #3c7bb6; 
+    background-color: #486bad; 
     color: white; 
     text-decoration: none; 
 
@@ -53,7 +53,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 #recipecontainer a:hover {
-    background-color: #305f8a; 
+    background-color: #2e4774; 
 }
 
 /* Form */
@@ -95,7 +95,7 @@
     border-radius: 8px;
 }
 #reviewForm button {
-    background-color: #3c7bb6; 
+    background-color: #486bad; 
     width: 100%;
     color: white;
     border: none;
@@ -105,7 +105,7 @@
     border-radius: 4px;
 }
 #reviewForm button:hover {
-    background-color: #305f8a; 
+    background-color: #2e4774; 
 }
 #reviewForm input[type="range"] {
     width: 100%;
